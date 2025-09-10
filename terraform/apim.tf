@@ -8,17 +8,12 @@ resource "azapi_resource" "apim" {
   parent_id = azurerm_resource_group.main.id
   location  = azurerm_resource_group.main.location
 
-  tags = {
-    environment = "dev"
-    workload    = "apim"
-  }
-
   body = {
     properties = {
       publisherName       = "Contoso"
       publisherEmail      = "admin@contoso.com"
-      publicNetworkAccess = "Enabled" # Explicit since no private networking
-      virtualNetworkType  = "None"    # Ensure no VNet integration
+      publicNetworkAccess = "Enabled"
+      virtualNetworkType  = "None"
     }
     sku = {
       name     = "StandardV2"
