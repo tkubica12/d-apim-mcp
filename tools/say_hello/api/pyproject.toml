@@ -1,0 +1,24 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "Say Hello FastAPI demo service"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"fastapi>=0.111.0",
+	"uvicorn>=0.30.0",
+	"pydantic>=2.6.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[tool.uv]
+dev-dependencies = ["ruff"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[project.scripts]
+say-hello-api = "main:main"

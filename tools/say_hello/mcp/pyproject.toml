@@ -1,0 +1,21 @@
+[project]
+name = "say_hello_mcp"
+version = "0.1.0"
+description = "Say Hello MCP (HTTP streaming) demo"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"fastmcp>=2.12,<2.13",
+	"uvicorn>=0.30.0"
+]
+
+# Optional console script for local stdio fallback (not primary demo path)
+[project.scripts]
+say-hello-mcp = "main:main"
+
+[tool.uv]
+dev-dependencies = ["ruff", "pytest", "httpx"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
